@@ -1,0 +1,21 @@
+bool areSimilar(std::vector<int> a, std::vector<int> b) {
+std::vector<int> pos;
+int flag=0;
+for (int i=0; i< a.size();i++)
+    {
+        if (a[i]!=b[i])
+        { 
+            flag++;
+            pos.push_back(i);
+        }
+    }
+if (flag==0) return true;
+if (flag==2)
+{
+    int a0=pos[0];
+    int a1=pos[1];
+    if (a[a0]==b[a1] && a[a1]==b[a0]) return true;
+    else return false;
+}
+else return false;
+}

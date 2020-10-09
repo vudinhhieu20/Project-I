@@ -1,0 +1,29 @@
+int matrixElementsSum(std::vector<std::vector<int>> matrix) {
+    int sum;
+    int max1=matrix.size(), max2=matrix[0].size();
+    for(int i=0;i<max1;i++)
+        {
+            for(int j=0; j<max2;j++)
+        {
+              if (i == 0) 
+              {
+                if (matrix[i][j] != 0)
+                  sum += matrix[i][j];
+                else 
+                {
+                  for (int k = 0; k < max1; k++)
+                    matrix[k][j] = 0;
+                }
+              }
+              else
+              {
+                  if(matrix[i-1][j]==0) continue;
+                  if(matrix[i][j]!=0) sum += matrix[i][j];
+                  else for (int k = 0; k < max1; k++)
+                    matrix[k][j] = 0;
+                  
+              }
+        }
+        }
+        return sum;
+}

@@ -1,0 +1,13 @@
+bool evenDigitsOnly(int n) {
+bool result;
+while(n!=0){
+ if((n%10)%2)
+ {
+     result = false;
+     break;
+ }
+ n=n/10;   
+}
+if(n%2) result=false; else result=true;
+return result;
+}

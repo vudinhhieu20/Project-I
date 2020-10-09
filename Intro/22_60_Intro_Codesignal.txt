@@ -1,0 +1,20 @@
+int avoidObstacles(std::vector<int> inputArray) {
+int cnt=2;bool ex=true;
+std::sort(inputArray.begin(),inputArray.end());
+while(1)
+{
+   if(cnt<inputArray[inputArray.size()-1])
+   {for (int i = 0;i<inputArray.size();i++)
+   {
+       if(inputArray[i]%cnt==0) {ex=false;break;}
+       ex=true;
+   }
+   if(ex) break;
+   else cnt++;
+   
+   }
+
+    else {cnt++;break;}
+}
+return cnt;
+}

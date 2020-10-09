@@ -1,0 +1,12 @@
+std::vector<int> sortByHeight(std::vector<int> a) {
+std::vector<int> temp;
+for (int i=0;i<a.size();i++) if (a[i]!=-1) temp.push_back(a[i]);
+int n = temp.size()-1;
+sort(temp.begin(),temp.end() );
+for (int i=0;i<a.size();i++) if (a[i]!=-1) 
+{
+    a[i]=temp[0];
+    temp.erase(temp.begin());
+}
+return a;
+}

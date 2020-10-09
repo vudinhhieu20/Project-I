@@ -1,0 +1,12 @@
+bool isLucky(int n) {
+string temp = to_string(n);
+int s = temp.size();
+
+int sum1=0, sum2=0;
+for (int i=0;i<s;i++)
+{
+sum1 += temp.at(i);
+sum2 += temp.at(--s);  
+}
+if (sum1==sum2) return true;else return false;
+}

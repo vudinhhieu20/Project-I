@@ -1,0 +1,9 @@
+int adjacentElementsProduct(std::vector<int> inputArray) {
+  int max = (-2147483647 - 1);
+  for (int i = 1; i < inputArray.size(); i++) {
+    int temp=inputArray[i-1]*inputArray[i];
+    if(max<temp)
+    max = temp;   
+}
+return max;
+}

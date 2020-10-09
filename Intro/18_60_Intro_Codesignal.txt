@@ -1,0 +1,27 @@
+bool palindromeRearranging(std::string inputString) {
+    std::string temp;
+    std::vector<int> num;
+    for (int i = 0; i < inputString.size(); i++)
+    {
+        size_t t = temp.find(inputString[i]);
+        if (t== std::string::npos)
+        {
+            temp += inputString[i];
+            num.push_back(0);
+        }
+    }
+
+    for (int i = 0; i < inputString.size(); i++)
+    {
+        int j = temp.find(inputString[i]);
+        num[j]++;
+    }
+    int cnt = 0;
+    for (int i = 0; i < num.size(); i++)
+    {
+        if (num[i] % 2) cnt++;
+    }
+   
+    if (cnt > 1) return false;
+    else return true;
+}

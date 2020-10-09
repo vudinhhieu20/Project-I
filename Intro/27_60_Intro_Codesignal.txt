@@ -1,0 +1,11 @@
+bool variableName(std::string name) {
+if(isdigit(name[0])) return false;
+for (int i=0;i<name.length();i++){
+    if(name[i]<=122&&name[i]>=97);
+    else if(name[i]<=90&&name[i]>=65);
+    else if(isdigit(name[i]));
+    else if (name[i]==95);
+    else return false;
+}
+return true;
+}

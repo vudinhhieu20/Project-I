@@ -1,0 +1,9 @@
+int makeArrayConsecutive2(std::vector<int> statues) {
+    int maxS=statues[0],minS=statues[0];
+    for (int i=1;i<statues.size();i++)
+    {
+        maxS = max(maxS, statues[i]);
+        minS = min(minS, statues[i]);
+    }
+    return (maxS - minS + 1 - statues.size());
+}

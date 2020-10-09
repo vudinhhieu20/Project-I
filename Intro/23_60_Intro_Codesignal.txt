@@ -1,0 +1,20 @@
+std::vector<std::vector<int>> boxBlur(std::vector<std::vector<int>> image) {
+std::vector<std::vector<int>> temp1;std::vector<int>temp2;
+for (int i = 1;i<image.size()-1;i++)
+{
+ for (int j = 1; j<image[i].size()-1;j++ )
+    {
+        int temp;
+        temp = image[i][j]+image[i-1][j]+image[i+1][j]
+        +image[i][j-1] +image[i][j+1]
+        +image[i-1][j-1]+image[i-1][j+1]
+        +image[i+1][j-1]+image[i+1][j+1];
+        temp=temp/9;
+        temp2.push_back(temp);
+        
+    }
+    temp1.push_back(temp2);
+    temp2.clear();
+}
+return temp1;
+}

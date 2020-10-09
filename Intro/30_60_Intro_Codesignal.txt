@@ -1,0 +1,4 @@
+int circleOfNumbers(int n, int firstNumber) {
+int center = n/2;
+return (firstNumber<center)?center+firstNumber:firstNumber-center;
+}

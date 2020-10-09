@@ -1,0 +1,8 @@
+bool areEquallyStrong(int yourLeft, int yourRight, int friendsLeft, int friendsRight) {
+int mymax= (yourLeft<=yourRight)?yourRight:yourLeft;
+int mymin= (yourLeft<=yourRight)?yourLeft:yourRight;
+int friendsmax = (friendsLeft<=friendsRight)?friendsRight:friendsLeft;
+int friendsmin = (friendsLeft<=friendsRight)?friendsLeft:friendsRight;
+if(mymax==friendsmax && friendsmin==mymin) return true;
+else return false;
+}

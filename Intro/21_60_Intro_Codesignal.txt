@@ -1,0 +1,33 @@
+bool isIPv4Address(std::string inputString) {
+    if (inputString[0] == '.' || inputString[inputString.size()] == '.')
+        return false;
+    inputString = "." + inputString + ".";
+    int cnt=0;
+    for (int i = 0; i < inputString.size()-1; i++)
+    {
+        if (inputString[i] == '.')
+        {
+            int j = i;
+            do { j++; } while (inputString[j] != '.');
+            std::string temp = inputString.substr(i + 1, j - i-1 );
+            int tempi = 0;
+            if (temp == "") return false;
+            std::vector<char> vector(temp.begin(), temp.end()); 
+            int size = vector.size();
+            
+            if (temp.size() > 1 && temp[0] == '0') return false;
+            for (int k = 0; k < vector.size(); k++)
+            {
+                if (!isdigit(temp[k])) return false;
+                    tempi = tempi +((vector[k]-48) *(int)pow(10, size - k - 1));
+            }
+           
+            if (tempi >= 256) return false;
+            else i = --j;
+            cnt++;
+
+        }
+    }
+    if (cnt != 4)return false;
+    return true;
+}
