@@ -1,0 +1,22 @@
+std::string buildPalindrome(std::string st) {
+std::string temp = st;
+reverse(temp.begin(), temp.end());
+std::string result;
+result= st+temp;
+int center = result.size()/2;
+for(int i=0;i<center;i++)
+{
+    if(result[i]==result[center])
+    {
+        std::string s1=result.substr(i,center-i);
+        std::string s2=result.substr(center,center-i);
+        if(s1.compare(s2)==0) 
+        {
+            result.erase(i,s1.length());
+            break;
+        }
+        else continue;
+    }
+}
+return result;
+}
