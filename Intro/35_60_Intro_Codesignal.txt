@@ -1,0 +1,4 @@
+char firstDigit(std::string inputString) {
+for(int i=0;i<inputString.size();i++)
+    if(isdigit(inputString.at(i))) return inputString.at(i);
+}

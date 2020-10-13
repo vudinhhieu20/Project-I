@@ -1,0 +1,11 @@
+int arrayMaxConsecutiveSum(std::vector<int> inputArray, int k) {
+int maxs=0;
+for(int i=0;i<k;i++) maxs += inputArray[i]; 
+int sums=maxs;
+for(int i=1;i<=inputArray.size()-k;i++){
+    sums = sums + inputArray[i+k-1]-inputArray[i-1];
+    maxs=max(sums,maxs);
+}
+return maxs;
+}
+

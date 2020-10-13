@@ -1,0 +1,22 @@
+int diffChar(std::string a, std::string b){
+    int cnt=0;
+    for (int i=0; i<a.size();i++){
+        if(a[i]!=b[i]) cnt++;
+    }
+    return cnt;
+}
+bool check(std::vector<std::string> a){
+    for(int i=0; i<a.size()-1;i++){
+        if(diffChar(a[i],a[i+1])!=1) return false;
+    }
+    return true;
+}
+bool stringsRearrangement(std::vector<std::string> inputArray) {
+sort(inputArray.begin(),inputArray.end());
+bool result;
+while(std::next_permutation(inputArray.begin(),inputArray.end())){
+    result= check(inputArray);
+    if(result) return result;
+}
+return result;
+}

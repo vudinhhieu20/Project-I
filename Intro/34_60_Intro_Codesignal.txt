@@ -1,0 +1,8 @@
+std::vector<int> extractEachKth(std::vector<int> inputArray, int k) {
+int i=1;
+while(k*i-i<inputArray.size()){
+    inputArray.erase(inputArray.begin()+k*i-i);
+    i++;
+}
+return inputArray;
+}
