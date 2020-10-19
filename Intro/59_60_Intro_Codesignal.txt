@@ -1,0 +1,21 @@
+void createSpiral(std::vector<std::vector<int>>& vector,int n, int last,int next)
+{
+    for(int i=next;i<n-next;i++) vector[next][i] = last++; 
+    
+    for(int j=next+1;j<n-next;j++) vector[j][n-next-1] =last++;
+    
+    for(int i=n-next-2;i>=next;i--) vector[n-next-1][i]=last++;
+    
+    for(int j=n-next-2;j>next;j--) vector[j][next]=last++;
+}      
+
+std::vector<std::vector<int>> spiralNumbers(int n) {
+	std::vector<std::vector<int>>  result(n, std::vector<int> (n,0));
+	int cnt=1;int k=0;
+	while(k<=n/2){
+	createSpiral(result,n,cnt,k);
+	k++;
+	cnt=result[k][k-1]+1;
+	}
+	return result;
+}

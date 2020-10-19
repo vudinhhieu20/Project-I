@@ -1,0 +1,16 @@
+int deleteDigit(int n) {
+std::string num = to_string(n);
+int size = num.size();
+int maxnum=INT_MIN;
+
+for (int i=0;i<size;i++)
+    {
+        std::string temp = num;
+        num.erase(i,1);
+        cout<<num;
+        int val = std::stoi(num);
+        maxnum = max(val, maxnum);
+        num=temp;
+    }
+return maxnum;
+}

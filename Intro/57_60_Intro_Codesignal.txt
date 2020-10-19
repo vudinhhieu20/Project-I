@@ -1,0 +1,25 @@
+std::vector<std::string> fileNaming(std::vector<std::string> names) {
+
+std::vector<std::string> temp;
+if(names.size()==0) return temp;
+temp.push_back(names[0]);
+
+for (int i=1;i<names.size();i++)
+    {
+        auto findS = std::find(temp.begin(), temp.end(),names[i]);
+        if(findS == temp.end()) temp.push_back(names[i]);
+        else
+        {
+            int k=1;
+            std::string tempS;
+            while(findS != temp.end())
+            {
+                tempS = names[i]+'('+to_string(k)+')';
+                k++;
+                findS = std::find(temp.begin(), temp.end(),tempS);
+            }
+            temp.push_back(tempS);
+        }
+    }
+return temp;
+}

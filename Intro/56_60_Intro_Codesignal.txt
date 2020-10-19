@@ -1,0 +1,27 @@
+bool check(int product){
+    if(product%2!=0&&product%3!=0&&product%5!=0&&product%7!=0) return true;
+    return false;
+    
+}
+int digitsProduct(int product){
+if(product==0) return 10;
+if(product<=9&&product>0) return product;
+if(check(product)) return -1;
+std::vector<string> resultv;int resulti=INT_MAX;
+for (int i=2;i<10;i++){
+    std::string results;
+    int temp = product/i;
+    if(product%i!=0) continue;
+    if(check(temp)) return -1;
+    int t=0;
+    if(temp>=10)
+         {t = digitsProduct(temp);if(t==-1) return -1;}
+    else t=temp;
+    results = to_string(i)+to_string(t);
+	resultv.push_back(results);
+    }
+    for (int i=0;i<resultv.size();i++){
+            resulti=min(resulti,stoi(resultv[i]));
+    }
+return resulti;
+}

@@ -1,0 +1,39 @@
+bool check(std::string test)
+{
+    for(int i=0;i<test.size();i++)
+    {
+         if(!isdigit(test[i]))
+            if(test[i]<65||test[i]>70)
+        return false;
+    }
+    return true;
+}
+bool isMAC48Address(std::string inputString) {
+inputString = "-"+inputString+"-";
+std::vector<string> temp;
+int sizeInput = inputString.size();
+for(int i=0;i<sizeInput;i++)
+    {
+        if(inputString[i]=='-')
+        {
+            i++;
+            std::string temps;
+            while(inputString[i]!='-')
+            {
+                temps = temps + inputString[i];
+                i++;
+            }
+            if(temps.size()!=2) return false; 
+            if(check(temps))    
+                {
+                    temp.push_back(temps);
+                    temps.clear();
+                }
+                if(i==sizeInput-1) break;
+                else i--;
+        }
+    }
+if(temp.size()!=6) return false;
+
+return true;
+}

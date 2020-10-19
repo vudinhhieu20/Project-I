@@ -1,0 +1,6 @@
+bool validTime(std::string time) {
+    int h = 10*((int)time[0]-48)+((int)time[1]-48);
+    int m = 10*((int)time[3]-48)+((int)time[4]-48);
+    if(h>23||m>59) return false;
+    return true;
+}

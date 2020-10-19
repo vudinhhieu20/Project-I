@@ -1,0 +1,19 @@
+int chessKnight(std::string cell) {
+char x = cell[0];
+char y = cell[1];
+int a[4]={x-2,x-1,x+1,x+2};
+for(int i=0;i<4;i++)
+	if(a[i]<97||a[i]>104) a[i]=0;
+
+int b[4]={y-2,y-1,y+1,y+2};
+for(int i=0;i<4;i++)
+	if(b[i]<49||b[i]>56) b[i]=0;
+
+int ab[8]={a[0]*b[1], a[0]*b[2], a[1]*b[0], a[1]*b[3], a[2]*b[0], a[2]*b[3], a[3]*b[1], a[3]*b[2]};
+
+int cntx=8;
+for(int i=0;i<8;i++) 
+	if(ab[i]==0) cntx--;
+
+return cntx; 
+}

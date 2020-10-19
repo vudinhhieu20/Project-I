@@ -1,0 +1,18 @@
+int sumUpNumbers(std::string inputString) {
+int size=inputString.size(),sum=0;
+inputString= inputString + "e";
+for(int i=0;i<size;i++)
+{
+    if(isdigit(inputString[i]))
+    {
+        std::string temp;
+        while(isdigit(inputString[i]))
+        {
+            temp=temp+inputString[i];
+            i++;
+        }
+        sum=sum+std::stoi(temp);   
+    }
+}
+return sum;
+}
