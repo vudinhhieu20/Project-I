@@ -21,7 +21,9 @@ int sizeCode= code.size()/8;
     }
 if(8*sizeCode==code.size()) return result;
 std::string subCode= code.substr(8*sizeCode,code.size()-8*sizeCode);
-        int letter = equalInt(subCode);
+	while(subCode.size()%8)
+        	subCode=subCode+"0";        
+	int letter = equalInt(subCode);
         char letterc= letter;
         result = result + letterc;
 return result;

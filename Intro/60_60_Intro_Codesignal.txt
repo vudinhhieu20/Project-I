@@ -17,14 +17,15 @@ bool sudoku(std::vector<std::vector<int>> grid) {
     }
 for(int i=0;i<9;i++)
     {
-        int tempr=0,tempc=0;
+        std::vector<int> temp1,temp2;
         for(int j=0;j<9;j++)
         {
-            tempr += grid[i][j];
-               
-            tempc += grid[j][i];
+            if(find(temp1.begin(),temp1.end(),grid[i][j])==temp1.end())
+                    temp1.push_back(grid[i][j]);
+            if(find(temp2.begin(),temp2.end(),grid[j][i])==temp2.end())
+                    temp2.push_back(grid[j][i]);
         }
-        if(tempr!=45||tempc!=45)return false;
+        if(temp1.size()!=9||temp2.size()!=9)return false;
     }
     return true;
 }
