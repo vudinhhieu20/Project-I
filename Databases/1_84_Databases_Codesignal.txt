@@ -1,5 +1,7 @@
-****Bài 1
-****Databases Codesignal
+
+****Bài 1 Databases
+****Codesignal
+
 CREATE PROCEDURE projectList()
 BEGIN
 
