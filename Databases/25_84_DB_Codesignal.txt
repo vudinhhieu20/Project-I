@@ -1,0 +1,11 @@
+CREATE PROCEDURE nullIntern()
+BEGIN
+    select count(if (description,1,1)) as number_of_nulls
+    from departments
+    where 
+    	trim(upper(description)) like "NULL"
+    or 	trim(lower(description)) like "nil"
+    or 	trim(description) like "-"
+    or 	description is NULL;
+    
+END

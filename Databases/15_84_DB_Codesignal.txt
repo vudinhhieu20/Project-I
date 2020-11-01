@@ -1,0 +1,11 @@
+CREATE PROCEDURE expressionsVerification()
+BEGIN
+    select *
+    from expressions
+    where 
+        (operation = '+' and a+b=c)
+    or  (operation = '-' and a-b=c)
+    or  (operation = '*' and a*b=c)
+    or  (operation = '/' and a/b=c)
+    order by id;
+END

@@ -1,0 +1,9 @@
+CREATE PROCEDURE mischievousNephews()
+BEGIN
+    SELECT weekday(mischief_date) AS weekday,mischief_date,author,title
+    FROM mischief
+    ORDER BY weekday,
+    CASE WHEN author = "Huey" THEN 0
+         WHEN author = "Dewey" THEN 1
+         WHEN author = "Louie" THEN 2   end,mischief_date,title;
+END

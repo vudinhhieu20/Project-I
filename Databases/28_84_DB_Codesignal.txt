@@ -1,0 +1,5 @@
+CREATE PROCEDURE interestClub()
+    SELECT name
+    FROM people_interests
+    WHERE interests & 00001000  AND interests & 00001000
+    ORDER BY name

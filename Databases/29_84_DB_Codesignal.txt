@@ -1,0 +1,8 @@
+CREATE PROCEDURE personalHobbies()
+BEGIN
+    select name
+    from people_hobbies
+    where hobbies like '%reading%' 
+          and hobbies like '%sports%'
+    order by name;
+END

@@ -1,0 +1,13 @@
+CREATE PROCEDURE newsSubscribers()
+BEGIN
+    select subscriber
+    from full_year
+    where locate('Daily',newspaper)
+    
+union 
+
+    select subscriber
+    from half_year
+    where locate('Daily',newspaper)
+    order by subscriber;
+END
