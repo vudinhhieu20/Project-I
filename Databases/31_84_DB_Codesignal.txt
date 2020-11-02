@@ -1,0 +1,13 @@
+CREATE PROCEDURE habitatArea()
+BEGIN
+    select
+    st_area(
+        st_convexhull(
+            st_geomfromtext(
+                concat('MULTIPOINT(',
+                    group_concat(x,' ',y),')')
+            )
+        )
+    ) as area
+    from places;
+END

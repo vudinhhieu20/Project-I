@@ -1,0 +1,5 @@
+CREATE PROCEDURE dateFormatting()
+BEGIN
+    select date_format(date_str,'%Y-%m-%d') as date_iso
+    from documents;
+END

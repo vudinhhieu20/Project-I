@@ -1,0 +1,10 @@
+CREATE PROCEDURE importantEvents()
+BEGIN
+    select id, name, event_date, participants
+    from(
+        select id, name, event_date, participants,
+                weekday(event_date) as w_day
+        from events
+        order by w_day,participants desc
+    ) tmp;
+END

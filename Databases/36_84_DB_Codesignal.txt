@@ -1,0 +1,7 @@
+CREATE PROCEDURE correctIPs()
+BEGIN
+    select id, ip
+    from ips
+    where IS_IPV4(ip)=1 and (ip like '%.%.__.%' or ip like '%.%.%.__')
+    order by id;
+END
