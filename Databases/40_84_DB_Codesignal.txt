@@ -1,3 +1,4 @@
+
 CREATE PROCEDURE pastEvents()
 BEGIN
     select name, event_date
