@@ -1,5 +1,5 @@
-DROP PROCEDURE IF EXISTS legsCount;
-CREATE PROCEDURE legsCount()
-    SELECT sum(if(type='human',2,4)) as summary_legs
-    FROM creatures
-    ORDER BY id;
+CREATE PROCEDURE combinationLock()
+BEGIN
+    select round(exp(sum(ln(length(characters))))) as combinations
+    from discs;
+END
