@@ -1,3 +1,5 @@
+
+
 bool isLucky(int n) {
 string temp = to_string(n);
 int s = temp.size();
